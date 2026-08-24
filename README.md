@@ -52,3 +52,45 @@ centralized-audit-trail-compliance-engine/
 ## Source Basis
 
 Prepared from the supplied Lab 1 Problem Statement #50: Centralized Audit Trail Compliance Engine.
+# Centralized Audit Trail Compliance Engine
+
+## UML Use-Case Diagram
+
+```mermaid
+flowchart LR
+
+    CO["Compliance Officer"]
+    SA["Security Auditor"]
+
+    subgraph SYSTEM["Centralized Audit Trail Compliance Engine"]
+
+        UC1(["Ingest Audit Logs"])
+        UC2(["Validate Audit Log"])
+        UC3(["Mask PII"])
+        UC4(["Persist Audit Record"])
+        UC5(["Calculate SHA-256<br/>Integrity Hash"])
+
+        UC6(["Search / Filter<br/>Audit Records"])
+        UC7(["Generate Audit Export"])
+        UC8(["Verify Record<br/>Integrity"])
+        UC9(["Seal Immutable<br/>Export"])
+        UC10(["Verify Export<br/>Integrity"])
+    end
+
+    CO --> UC1
+    CO --> UC6
+    CO --> UC7
+
+    SA --> UC6
+    SA --> UC7
+    SA --> UC10
+
+    UC1 -. "include" .-> UC2
+    UC4 -. "include" .-> UC3
+    UC4 -. "include" .-> UC5
+
+    UC7 -. "include" .-> UC6
+    UC7 -. "include" .-> UC8
+    UC7 -. "include" .-> UC9
+
+    UC10 -. "extend" .-> UC7'''
