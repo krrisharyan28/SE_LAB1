@@ -1,5 +1,5 @@
 //2.USE-CASE-DIAGRAM
-@startuml
+'''@startuml
 title Centralized Audit Trail Compliance Engine
 left to right direction
 
@@ -42,4 +42,4 @@ UC7 ..> UC9 : <<include>>
 ' Extend relationship
 UC10 ..> UC7 : <<extend>>
 
-@enduml
+@enduml'''
