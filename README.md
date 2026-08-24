@@ -1,6 +1,6 @@
 # Centralized Audit Trail Compliance Engine
 
-PES University — CSE Lab 1: Requirements Engineering & UML Use-Case Modelling
+SE Lab 1: Requirements Engineering & UML Use-Case Modelling
 
 ## Problem Statement
 
